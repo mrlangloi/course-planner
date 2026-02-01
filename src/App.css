@@ -14,10 +14,11 @@
 
 .courses-section {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     width: 100%;
-    padding: 20px;
+    padding: 4rem;
     box-sizing: border-box;
 }
 
@@ -29,4 +30,6 @@
     flex: 1;
     margin: 0 10px;
     box-sizing: border-box;
+    min-height: 80vh;
+    max-width: 30rem;
 }
