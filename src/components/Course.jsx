@@ -7,7 +7,7 @@ const Course = (props) => {
     return (
         <div className="course-card">
             <div className="course-card-header">
-                <h3>{id}</h3>
+                <h3 className="course-card-id">{id}</h3>
                 <h3>{units} units</h3>
             </div>
             <h4>{title}</h4>

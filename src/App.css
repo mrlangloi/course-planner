@@ -61,6 +61,7 @@ body {
 .course-card h3 {
     color: #24A98B;
     font-size: 1.2rem;
+    margin: 0;
 }
 
 .course-card p{
@@ -69,28 +70,22 @@ body {
 
 }
 
-.course-actions {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 50px;
+.course-card-header {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    margin: 0; 
 }
 
-.course-actions button {
-    background-color: #24A98B;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s;
+.course-card-id {
+    flex: 1;
+    margin: 0;
+
 }
 
-.course-actions button:hover {
-    background-color: #1e7a6b;
+.course-card h4 {
+    margin: 1rem auto;
 }
-
 .footer-content {
     padding-top: 2.5rem;
     padding-left: 2rem;
