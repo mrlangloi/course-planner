@@ -14,19 +14,6 @@ function App() {
     const subject = 'CMPT';
     const URL = `https://api.sfucourses.com/v1/rest/sections?term=${term}&dept=${subject}`;
 
-    // have to use useEffect to avoid infinite loop
-    // useEffect(() => {
-    //     const fetchCourses = axios.get(URL).then((response) => {
-    //         const initialCourses = response.data.map((course) => ({
-    //             ...course,
-    //             category: "AVAILABLE", // default category
-    //         }));
-    //         setCourses(initialCourses);
-    //     }).catch((error) => {
-    //         console.error("Error fetching courses data: ", error);
-    //     });
-    // }, []);
-
     // callback function to pass to Column component
     const changeCourseCategory = (currentCourseCode, newCategory) => {
         const updatedCourses = courses.map(course => {
@@ -95,10 +82,9 @@ function App() {
                     borderRadius: '10px',
                     height: '24px',
                     overflow: 'hidden',
-                    display: 'flex', // Stack segments side-by-side
+                    display: 'flex',
                     position: 'relative'
                 }}>
-                    {/* Completed Segment (Solid) */}
                     <div
                         style={{
                             width: `${completedPercent}%`,
@@ -109,12 +95,11 @@ function App() {
                         }}
                     ></div>
 
-                    {/* Current Segment (Faded/Striped) */}
                     <div
                         style={{
                             width: `${currentPercent}%`,
                             height: '100%',
-                            background: 'rgba(76, 175, 80, 0.4)', // Faded green
+                            background: 'rgba(76, 175, 80, 0.4)',
                             backgroundImage: 'linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent)',
                             backgroundSize: '20px 20px',
                             transition: 'width 0.5s ease-in-out',
