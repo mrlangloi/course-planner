@@ -2,7 +2,7 @@ const Course = (props) => {
 
     const { title, description, updateCourse } = props;
 
-    const categories = ["COMPLETED", "PLANNED", "AVAILABLE"];
+    const categories = ["COMPLETED", "CURRENT", "AVAILABLE"];
 
     return (
         <div className="course-card">

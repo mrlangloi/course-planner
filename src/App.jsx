@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Column from './components/Column';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -41,17 +42,18 @@ function App() {
         setCourses(updatedCourses);
     }
 
-    const categories = ["COMPLETED", "PLANNED", "AVAILABLE"];
+    const categories = ["COMPLETED", "CURRENT", "AVAILABLE"];
 
     return (
         <div className="container">
             <main className="main-content">
                 <div className="courses-section">
-                    {categories.map((index, category) => (
-                        <Column key={index} courses={courses} category={category} />
+                    {categories.map((category) => (
+                        <Column key={category} courses={courses} category={category} changeCourseCategory={changeCourseCategory} />
                     ))}
                 </div>
             </main>
+            <Footer />
         </div>
     );
 }
