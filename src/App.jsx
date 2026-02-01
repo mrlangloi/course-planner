@@ -1,16 +1,20 @@
 import { useState } from 'react';
-import Column from './components/Column';
 import './App.css';
+import Column from './components/Column';
 
 function App() {
 
+    const [courses, setCourses] = useState([]);
+
     // fetch Brian's courses data
+    const term = "2026-spring";
+    const subject = 'CMPT';
+    const URL = `https://api.sfucourses.com/v1/rest/sections?term=${term}&dept=${subject}`;
+
     const fetchCourses = axios.get(URL).then((response) => {
+        // console.log(response.data);
         setCourses(response.data);
     });
-
-    // store courses data in state
-    const [courses, setCourses] = useState([]);
 
     // map an extra string field "category" to each course
     const updatedCourses = courses.map(course => ({
@@ -19,15 +23,15 @@ function App() {
     }))
 
     // callback function to pass to Column component
-    // const changeCourseCategory = (courseCode, newCategory) => { 
-    //     const updatedCourses = courses.map(course => {
-    //         if (course.id === courseId) {
-    //             return { ...course, category: newCategory };
-    //         }
-    //         return course;
-    //     });
-    //     setCourses(updatedCourses);
-    // }
+    const changeCourseCategory = (courseCode, newCategory) => { 
+        const updatedCourses = courses.map(course => {
+            if (course.id === courseId) {
+                return { ...course, category: newCategory };
+            }
+            return course;
+        });
+        setCourses(updatedCourses);
+    }
 
     const categories = ["COMPLETED", "PLANNED", "AVAILABLE"];
 
