@@ -24,8 +24,7 @@ body {
 
 .courses-section {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     gap: 1rem;
     width: 100%;
     padding: 4rem;
@@ -41,7 +40,9 @@ body {
     margin: 0 10px;
     box-sizing: border-box;
     min-height: 80vh;
-    max-width: 30rem;
+    max-width: 80vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .column h2 {
