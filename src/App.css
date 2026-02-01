@@ -29,6 +29,7 @@ body {
     width: 100%;
     padding: 0 4rem;
     box-sizing: border-box;
+    padding-bottom: 4rem;
 }
 
 .column {
@@ -133,23 +134,11 @@ body {
 }
 
 .footer-links {
-    color: var(--text-link);
+    color: #24A98B;
     text-decoration: none;
 }
 
 .footer-links:hover {
     transition: 0.2s;
-    color: var(--text-link-hover);
+    color: #1e7a6b;
 }
-
-.social-links a {
-    margin-right: 1rem;
-    color: var(--text-link);
-    text-decoration: none;
-}
-
-.social-links a:hover {
-    transition: 0.2s;
-    color: var(--text-link-hover);
-}
-
