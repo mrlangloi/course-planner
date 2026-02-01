@@ -14,7 +14,7 @@ const Column = (props) => {
             <h3>{capitalizeCategory} Courses</h3>
             <div className="course-list">
                 {filteredCourses.map((course) => (
-                    <Course key={`${course.dept}-${course.number}`} id={`${course.dept}-${course.number}`} courseCode={course.number} title={course.title} units={course.units} />
+                    <Course key={`${course.dept}-${course.number}`} id={`${course.dept}-${course.number}`} courseCode={course.number} title={course.title} units={course.units} changeCourseCategory={changeCourseCategory} />
                 ))}
             </div>
         </div>

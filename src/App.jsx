@@ -17,25 +17,22 @@ function App() {
     // have to use useEffect to avoid infinite loop
     useEffect(() => {
         const fetchCourses = axios.get(URL).then((response) => {
-            console.log(response.data);
-            setCourses(response.data);
+            const initialCourses = response.data.map((course) => ({
+                ...course,
+                category: "AVAILABLE", // default category
+            }));
+            setCourses(initialCourses);
         }).catch((error) => {
             console.error("Error fetching courses data: ", error);
         });
     }, []);
 
-    // map an extra string field "category" to each course
-    const updatedCourses = courses.map(course => ({
-        ...course,
-        category: "AVAILABLE", // default category
-    }));
-
-    console.log(updatedCourses);
-
     // callback function to pass to Column component
-    const changeCourseCategory = (courseCode, newCategory) => {
+    const changeCourseCategory = (currentCourseCode, newCategory) => {
         const updatedCourses = courses.map(course => {
-            if (course.id === courseId) {
+            const courseCode = `${course.dept}-${course.number}`;
+            if (currentCourseCode === courseCode) {
+                console.log(`Changing category of course ${currentCourseCode} to ${newCategory}`);
                 return { ...course, category: newCategory };
             }
             return course;
@@ -51,7 +48,7 @@ function App() {
             <main className="main-content">
                 <div className="courses-section">
                     {categories.map((category) => (
-                        <Column key={category} courses={updatedCourses} category={category} changeCourseCategory={changeCourseCategory} />
+                        <Column key={category} courses={courses} category={category} changeCourseCategory={changeCourseCategory} />
                     ))}
                 </div>
             </main>

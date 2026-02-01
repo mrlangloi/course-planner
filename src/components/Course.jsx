@@ -1,17 +1,20 @@
 const Course = (props) => {
 
-    const { title, description, updateCourse } = props;
+    const { id, title, units, changeCourseCategory } = props;
 
     const categories = ["COMPLETED", "CURRENT", "AVAILABLE"];
 
     return (
         <div className="course-card">
-            <h3>{props.title}</h3>
-            <p>{props.description}</p>
+            <div className="course-card-header">
+                <h3>{id}</h3>
+                <h3>{units} units</h3>
+            </div>
+            <h4>{title}</h4>
             <div className="course-actions">
                 {categories.map((category) => (
-                    <button key={category} onClick={() => updateCourse(props.id, category)}>
-                        {category.substring(1).toLowerCase()}
+                    <button key={category} onClick={() => changeCourseCategory(id, category)}>
+                        {category.charAt(0) + category.substring(1).toLowerCase()}
                     </button>
                 ))}
             </div>
