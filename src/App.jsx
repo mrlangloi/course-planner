@@ -51,7 +51,7 @@ function App() {
             <main className="main-content">
                 <div className="courses-section">
                     {categories.map((category) => (
-                        <Column key={category} courses={courses} category={category} changeCourseCategory={changeCourseCategory} />
+                        <Column key={category} courses={updatedCourses} category={category} changeCourseCategory={changeCourseCategory} />
                     ))}
                 </div>
             </main>
