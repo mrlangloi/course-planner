@@ -15,6 +15,8 @@ function App() {
     const fetchCourses = axios.get(URL).then((response) => {
         // console.log(response.data);
         setCourses(response.data);
+    }).catch((error) => {
+        console.error("Error fetching courses data: ", error);
     });
 
     // map an extra string field "category" to each course
