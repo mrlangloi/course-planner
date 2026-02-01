@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Column from './components/Column';
 import Footer from './components/Footer';
+import Hero from './components/Hero';
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
 
     return (
         <div className="container">
+            <Hero />
             <main className="main-content">
                 <div className="courses-section">
                     {categories.map((category) => (
