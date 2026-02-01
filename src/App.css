@@ -75,6 +75,7 @@ body {
 .course-card h3 {
     color: #24A98B;
     font-size: 1.2rem;
+    margin: 0;
 }
 
 .course-card p{
@@ -83,6 +84,22 @@ body {
 
 }
 
+.course-card-header {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    margin: 0; 
+}
+
+.course-card-id {
+    flex: 1;
+    margin: 0;
+
+}
+
+.course-card h4 {
+    margin: 1rem auto;
+}
 .footer-content {
     padding-top: 2.5rem;
     padding-left: 2rem;
