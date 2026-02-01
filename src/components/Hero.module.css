@@ -1,0 +1,14 @@
+.hero-section {
+    text-align: center;
+    padding: 16rem 0 12rem 0;
+    background-image:
+        linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)),
+        url('/src/assets/hero_background.jpg');
+    background-size: cover;
+    background-position: 50% center;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    margin-bottom: .75rem;
+}
