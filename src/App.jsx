@@ -57,7 +57,7 @@ function App() {
         <div className="container">
             <Hero />
 
-            <div className="progress-container" style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+            <div className="progress-container" style={{ padding: '20px', maxWidth: '800px', margin: '2rem auto', width:'80%' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', fontSize: '14px' }}>
                     <span>Degree Progress</span>
                     <span>{completedUnits + currentUnits} / 120 Units Tracked</span>
