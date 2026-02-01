@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import './App.css';
 import Column from './components/Column';
