@@ -29,16 +29,16 @@ function App() {
 
     const categories = ["COMPLETED", "CURRENT", "AVAILABLE"];
 
-    const totalUnits = courses.reduce((sum, c) => sum + Number(c.units), 0);
+    const TOTAL_UNITS = 120;
     const completedUnits = courses
         .filter(c => c.category === "COMPLETED")
         .reduce((sum, c) => sum + Number(c.units), 0);
-    const completedPercent = totalUnits > 0 ? (completedUnits / totalUnits) * 100 : 0;
+    const completedPercent = TOTAL_UNITS > 0 ? (completedUnits / TOTAL_UNITS) * 100 : 0;
 
     const currentUnits = courses
         .filter(c => c.category === "CURRENT")
         .reduce((sum, c) => sum + Number(c.units), 0);
-    const currentPercent = totalUnits > 0 ? (currentUnits / totalUnits) * 100 : 0;
+    const currentPercent = TOTAL_UNITS > 0 ? (currentUnits / TOTAL_UNITS) * 100 : 0;
 
     useEffect(() => {
         // check for saved data in localStorage
@@ -74,7 +74,7 @@ function App() {
             <div className="progress-container" style={{ padding: '20px', maxWidth: '800px', margin: '2rem auto', width:'80%' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', fontSize: '14px' }}>
                     <span>Degree Progress</span>
-                    <span>{completedUnits + currentUnits} / 120 Units Tracked</span>
+                    <span>{completedUnits + currentUnits} / {TOTAL_UNITS} Units Tracked</span>
                 </div>
 
                 <div className="progress-bar-bg" style={{
