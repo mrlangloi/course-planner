@@ -1,5 +1,5 @@
 import styles from './Hero.module.css';
-import logo from '../assets/Treehouse_Degree_Planner.png';
+import logo from '../assets/Treehouse_Degree_Planner_white.png';
 
 const Hero = () => {
     return (
